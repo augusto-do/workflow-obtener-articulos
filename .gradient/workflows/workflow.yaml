@@ -11,6 +11,6 @@ jobs:
       # any content written to that directory will be committed to a newly
       # created dataset version when the jobs completes.
       data1:
-        type: dataset
+        type: datasetssssss
         with:
           id: articulos_crudos
