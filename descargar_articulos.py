@@ -10,7 +10,6 @@ canales = ['mundo', 'actualidad','revista','planeta','economia','deportes']
 
 posts = []
 
-
 for canal in canales:
 
     url = 'https://www.diariolibre.com/feed/' + canal + '.xml'
