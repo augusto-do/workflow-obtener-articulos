@@ -1,7 +1,7 @@
 jobs:
    job1-descargar-articulos:
      env:  
-         URLS_CANALES_DIARIOS: "['https://www.diariolibre.com/feed/economia']"
+         URLS_CANALES_DIARIOS: "['http://www.diariolibre.com/feed/economia']"
     uses: script@v1
     with:
       script: python /inputs/repo/descargar_articulos.py
