@@ -1,16 +1,19 @@
+on':
+  github:
+    branches:
+      only: main
 jobs:
-   job1-descargar-articulos:
-     env:  
-         URLS_CANALES_DIARIOS: "['http://www.diariolibre.com/feed/economia']"
-    uses: script@v1
+  job1-descargar-articulos: null
+  resources:
+    instance-type: C5
+env:
+  URLS_CANALES_DIARIOS: '[''http://www.diariolibre.com/feed/economia'']'
+uses: script@v1
+with:
+  script: python /inputs/repo/descargar_articulos.py
+  image: 'tensorflow/tensorflow:1.14.0-py3'
+outputs:
+  data1:
+    type: datasets
     with:
-      script: python /inputs/repo/descargar_articulos.py
-      image: tensorflow/tensorflow:1.14.0-py3
-    outputs:
-      # A directory will automatically be created for output datasets and
-      # any content written to that directory will be committed to a newly
-      # created dataset version when the jobs completes.
-      data1:
-        type: datasets
-        with:
-          id: articulos_crudos
+      id: articulos_crudos
